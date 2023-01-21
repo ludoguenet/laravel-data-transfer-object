@@ -13,20 +13,23 @@ class StorePostRequest extends FormRequest
         return true;
     }
 
-    public function rules()
+    /**
+     * @return array<string, string[]>
+     */
+    public function rules(): array
     {
         return [
-            'name' => [
+            'title' => [
                 'required',
                 'string',
                 'max:90'
             ],
-            'message' => [
+            'content' => [
                 'required',
                 'string',
                 'max:150'
             ],
-            'birthday' => [
+            'published_at' => [
                 'required',
                 'date',
             ],
